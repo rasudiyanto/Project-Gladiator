@@ -13,7 +13,7 @@ EnemyTank = function (index, game, player, bullets) {
     this.alive = true;
 
     this.shadow = game.add.sprite(x, y, 'enemy', 'shadow');
-    this.tank = game.add.sprite(x, y, 'enemy', 'tank1');
+    this.tank = game.add.sprite(x, y, 'enemy', 'Hero Sprite (2) copy');
     this.turret = game.add.sprite(x, y, 'enemy', 'turret');
 
     this.shadow.anchor.set(0.5);
@@ -81,7 +81,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 
 function preload () {
 
-    game.load.atlas('tank', 'assets/games/tanks/tanks.png', 'assets/games/tanks/tanks.json');
+    game.load.atlas('tank', 'assets/games/tanks/bob.png', 'assets/games/tanks/tanks.json');
     game.load.atlas('enemy', 'assets/games/tanks/enemy-tanks.png', 'assets/games/tanks/tanks.json');
     game.load.image('logo', 'assets/games/tanks/logo.png');
     game.load.image('bullet', 'assets/games/tanks/bullet.png');
@@ -121,9 +121,9 @@ function create () {
     land.fixedToCamera = true;
 
     //  The base of our tank
-    tank = game.add.sprite(0, 0, 'tank', 'tank1');
+    tank = game.add.sprite(0, 0, 'tank', 'Hero Sprite (2) copy');
     tank.anchor.setTo(0.5, 0.5);
-    tank.animations.add('move', ['tank1', 'tank2', 'tank3', 'tank4', 'tank5', 'tank6'], 20, true);
+    tank.animations.add('move', ['Hero Sprite (2) copy', 'Hero Sprite (2) copy 2', 'Hero Sprite (2) copy 3', 'Hero Sprite (2) copy 4', 'Hero Sprite (2) copy 5', 'Hero Sprite (2) copy 6'], 20, true);
 
     //  This will force it to decelerate and limit its speed
     game.physics.enable(tank, Phaser.Physics.ARCADE);
@@ -166,8 +166,8 @@ function create () {
     bullets.enableBody = true;
     bullets.physicsBodyType = Phaser.Physics.ARCADE;
     bullets.createMultiple(30, 'bullet', 0, false);
-    bullets.setAll('anchor.x', 0.5);
-    bullets.setAll('anchor.y', 0.5);
+    bullets.setAll('anchor.x', 102);
+    bullets.setAll('anchor.y', 43);
     bullets.setAll('outOfBoundsKill', true);
     bullets.setAll('checkWorldBounds', true);
 
